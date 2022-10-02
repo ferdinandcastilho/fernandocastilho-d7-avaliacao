@@ -21,11 +21,6 @@ public partial class MainWindow : INotifyPropertyChanged
     }
 
     private string _password;
-    public string Password
-    {
-        get => _password;
-        set { _password = value; PropertyChanged?.Invoke(this, new(nameof(Password))); }
-    }
 
     public MainWindow()
     {
@@ -36,12 +31,14 @@ public partial class MainWindow : INotifyPropertyChanged
 
     private void AuthenticateUser(object sender, RoutedEventArgs e)
     {
-        bool validUser = _userRepository.AuthenticateUser(UserName, Password);
+        _password = PasswordBox.Password;
+
+        bool validUser = _userRepository.AuthenticateUser(UserName, _password);
 
         string message = validUser ? "Usuário Autenticado!" : "Credenciais Inválidas";
 
         UserName = string.Empty;
-        Password = string.Empty;
+        PasswordBox.Password = string.Empty;
 
         var responseWindow = App.GetService<MessageWindow>();
         responseWindow.Message = message;

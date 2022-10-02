@@ -42,7 +42,8 @@
                  Canvas.Top="180"
                  Canvas.Right="60"
                  Canvas.Bottom="420"
-                 Text="{Binding UserName, Mode=TwoWay, NotifyOnSourceUpdated=True}" />
+                 Text="{Binding UserName, Mode=TwoWay, NotifyOnSourceUpdated=True}"
+                 FontSize="20" />
 
         <!-- Password Input -->
         <TextBlock Text="Senha"
@@ -54,30 +55,33 @@
                    Canvas.Top="325"
                    Canvas.Right="372"
                    Canvas.Bottom="316" />
-        <TextBox Width="360"
-                 Height="60"
-                 Canvas.Left="60"
-                 Canvas.Top="360"
-                 Canvas.Right="60"
-                 Canvas.Bottom="240"
-                 Text="{Binding Password, Mode=TwoWay, NotifyOnSourceUpdated=True}" />
 
-        <!--Access Button-->
-        <Button Width="240"
-                Height="60"
-                Canvas.Left="120"
-                Canvas.Top="540"
-                Canvas.Right="120"
-                Canvas.Bottom="60"
-                Click="AuthenticateUser">
-            <Button.Content>
-                <TextBlock Text="Acessar"
-                           FontFamily="Inter"
-                           FontSize="16"
-                           Width="61"
-                           Height="19"
-                           HorizontalAlignment="Center" />
-            </Button.Content>
-        </Button>
+        <PasswordBox Width="360"
+                     Height="60"
+                     Canvas.Left="60"
+                     Canvas.Top="360"
+                     Canvas.Right="60"
+                     Canvas.Bottom="240"
+                     PasswordChar="*"
+                     FontSize="20"
+                     x:Name="PasswordBox"/>
+
+            <!--Access Button-->
+            <Button Width="240"
+                    Height="60"
+                    Canvas.Left="120"
+                    Canvas.Top="540"
+                    Canvas.Right="120"
+                    Canvas.Bottom="60"
+                    Click="AuthenticateUser">
+                <Button.Content>
+                    <TextBlock Text="Acessar"
+                               FontFamily="Inter"
+                               FontSize="16"
+                               Width="61"
+                               Height="19"
+                               HorizontalAlignment="Center" />
+                </Button.Content>
+            </Button>
     </Canvas>
 </Window>
