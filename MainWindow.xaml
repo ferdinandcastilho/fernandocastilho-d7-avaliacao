@@ -1,0 +1,83 @@
+﻿<Window x:Class="LoginScreenApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LoginScreenApp"
+        mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance Type=local:MainWindow, IsDesignTimeCreatable=True}"
+        Title="D7 - Avaliação"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="CanMinimize"
+        Width="480"
+        Height="660">
+    <Canvas>
+
+        <!-- Screen Title -->
+        <TextBlock Text="Autenticação do Usuário"
+                   FontFamily="Inter"
+                   FontSize="24"
+                   FontWeight="Bold"
+                   Width="290"
+                   Height="32"
+                   Canvas.Left="96"
+                   Canvas.Top="60"
+                   Canvas.Right="97"
+                   Canvas.Bottom="571"
+                   HorizontalAlignment="Center" />
+
+        <!-- User Input -->
+        <TextBlock Text="Usuário"
+                   FontFamily="Inter"
+                   FontSize="16"
+                   Width="58"
+                   Height="19"
+                   Canvas.Left="60"
+                   Canvas.Top="145"
+                   Canvas.Right="362"
+                   Canvas.Bottom="496" />
+        <TextBox Width="360"
+                 Height="60"
+                 Canvas.Left="60"
+                 Canvas.Top="180"
+                 Canvas.Right="60"
+                 Canvas.Bottom="420"
+                 Text="{Binding UserName, Mode=TwoWay, NotifyOnSourceUpdated=True}" />
+
+        <!-- Password Input -->
+        <TextBlock Text="Senha"
+                   FontFamily="Inter"
+                   FontSize="16"
+                   Width="58"
+                   Height="19"
+                   Canvas.Left="60"
+                   Canvas.Top="325"
+                   Canvas.Right="372"
+                   Canvas.Bottom="316" />
+        <TextBox Width="360"
+                 Height="60"
+                 Canvas.Left="60"
+                 Canvas.Top="360"
+                 Canvas.Right="60"
+                 Canvas.Bottom="240"
+                 Text="{Binding Password, Mode=TwoWay, NotifyOnSourceUpdated=True}" />
+
+        <!--Access Button-->
+        <Button Width="240"
+                Height="60"
+                Canvas.Left="120"
+                Canvas.Top="540"
+                Canvas.Right="120"
+                Canvas.Bottom="60"
+                Click="AuthenticateUser">
+            <Button.Content>
+                <TextBlock Text="Acessar"
+                           FontFamily="Inter"
+                           FontSize="16"
+                           Width="61"
+                           Height="19"
+                           HorizontalAlignment="Center" />
+            </Button.Content>
+        </Button>
+    </Canvas>
+</Window>
